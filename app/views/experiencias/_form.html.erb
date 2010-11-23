@@ -1,0 +1,45 @@
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+      <table style="border: 1px dotted; width: 500px; margin: auto; padding: 10px; text-transform: capitalize ">
+        <tr>
+          <td style="background: #666; color:#fff; padding: 10px; font-weight: bold;" colspan="2"> Datos </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd">
+          <td id="tede1"><%= f.label :docencia %></td>
+          <td><%= f.text_field :docencia %></td>
+        </tr>
+        <tr class="pair">
+          <td id="tede1"><%= f.label :institucion_empresa, "Institución/Empresa" %></td>
+          <td><%= f.text_field :institucion_empresa %></td>
+        </tr>
+        <tr class="odd">
+          <td id="tede1"><%= f.label :area %></td>
+          <td><%= f.text_field :area %></td>
+        </tr>
+        <tr class="pair">
+          <td id="tede1"><%= f.label :periodo %></td>
+          <td><%= select(:experiencia, :periodo, { "1" => "1", "2" => "2", "3" => "3", "4" => "4" }) %></td>
+        </tr>
+        <tr class="odd">
+          <td id="tede1"><%= f.label :ano %></td>
+          <td><%= f.date_select :ano, :discard_month => true, :discard_day => true, :start_year => 1980, :end_year => 2010 %></td>
+        </tr>
+        <tr class="pair">
+          <td id="tede1"><%= f.label :resultados %></td>
+          <td><%= f.text_field :resultados %></td>
+        </tr>
+      </table>
+    </div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>

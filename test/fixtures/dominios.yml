@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  idioma_id: 1
+  lee: MyString
+  escribe: MyString
+  habla: MyString
+  traduce: MyString
+  docente_id: 1
+
+two:
+  idioma_id: 1
+  lee: MyString
+  escribe: MyString
+  habla: MyString
+  traduce: MyString
+  docente_id: 1

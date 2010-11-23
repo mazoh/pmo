@@ -1,0 +1,57 @@
+<table style=" width: 900px">
+  <tr>
+    <td><h1 >Lista de academicos</h1></td>
+    <td style="width:230px ; text-align: right ">
+     <% form_tag practica_academicos_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Buscar", :name => nil %>
+     <% end %>
+    </td>
+  </tr>
+</table>
+
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+
+<table id="tab">
+  <tr>
+    <th id="titul">Titulo</th>
+    <th id="titul">Centro</th>
+    <th id="titul">Ciudad</th>
+    <th id="titul">Estado</th>
+    <th id="titul" colspan="3">Opciones</th>
+  </tr>
+  <tr id="vac"></tr>
+
+<% @academicos.each do |academico| %>
+  <tr class="<%= cycle('odd','pair') %>">
+    <td><%=h academico.titulo %></td>
+    <td><%=h academico.centro %></td>
+    <td><%=h academico.ciudad.nombre %></td>
+    <td><%=h academico.estado %></td>
+    <td><%= link_to 'Ver', practica_academico_path(@practica, academico) %></td>
+    <td><%= link_to 'Editar', edit_practica_academico_path(@practica, academico) %></td>
+    <td><%= link_to 'Destruir', practica_academico_path(@practica, academico), :confirm => 'Esta Seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= link_to 'Nuevo academico', new_practica_academico_path %> |
+      <%= link_to 'Atras', programas_path %>
+    </td>
+  </tr>
+</table>

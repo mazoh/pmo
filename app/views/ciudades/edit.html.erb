@@ -1,0 +1,15 @@
+<h1>Editar ciudad</h1>
+
+<% form_for(@ciudad) do |f| %>
+  <%= f.error_messages %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= f.submit 'Actualizar' %><% end %> |
+      <%= link_to 'Ver', @ciudad %> |
+      <%= link_to 'Atras', ciudades_path %>
+    </td>
+  </tr>
+</table>

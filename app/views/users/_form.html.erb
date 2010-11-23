@@ -1,0 +1,54 @@
+<div id="dib">¿Ya tienes una cuenta? <%= link_to "Acceder", login_path %></div>
+
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+      
+           <% form_for @user do |f| %>
+            <%= f.error_messages %>
+
+      <table style="border: 1px dotted; width: 500px; margin: auto; padding: 10px; text-transform: capitalize ">
+        <tr>
+          <td style="background: #666; color:#fff; padding: 10px; font-weight: bold;" colspan="2"> Mi Cuenta </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>        
+        <tr class="odd">
+          <td id="tede1"><%= f.label :username, "Usuario" %></td>
+          <td><%= f.text_field :username %></td>
+        </tr>
+        <tr class="pair">
+          <td id="tede1"><%= f.label :email, "Email" %></td>
+          <td><%= f.text_field :email %></td>
+        </tr>
+        <tr class="odd">
+          <td id="tede1"><%= f.label :password, "Contraseña" %></td>
+          <td><%= f.password_field :password %></td>
+        </tr>
+        <tr class="pair">
+          <td id="tede1"><%= f.label :password_confirmation, "Confirmar contraseña" %></td>
+          <td><%= f.password_field :password_confirmation %></td>
+        </tr><!--
+        <tr class="odd">
+          <td id="tede1"><#%= f.label :roles %></td>
+          <td><#% for role in User::ROLES %>
+                <#%= check_box_tag "user[roles][]", role, @user.roles.include?(role) %>
+                <#%=h role.humanize %>
+              <#% end %>
+              <#%= hidden_field_tag "user[roles][]", "" %></td>
+        </tr>-->
+        <tr>
+          <td colspan="2" id="bot"><%= f.submit "Guardar" %><% end %></td>
+        </tr>
+      </table>
+    </div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>

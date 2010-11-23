@@ -1,0 +1,60 @@
+<table style=" width: 900px; ">
+  <tr>
+    <td style="width: 380px "><h1>Dominios de idioma de:</h1></td>
+    <td style="text-align:center; "><h2><%= @docente.nombres %></h2></td>
+    <td colspan="2" style="width:230px ; text-align: right ; padding-bottom: 15px; padding-top: 15px">
+     <% form_tag docente_dominios_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Buscar", :name => nil %>
+     <% end %>
+    </td>
+  </tr>
+</table>
+
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+
+<table id="tab">
+  <tr>
+    <th id="titul">Idioma</th>
+    <th id="titul">Lee</th>
+    <th id="titul">Escribe</th>
+    <th id="titul">Habla</th>
+    <th id="titul">Traduce</th>
+    <th id="titul" colspan="3">Opciones</th>
+  </tr>
+  <tr id="vac"></tr>
+
+<% @dominios.each do |dominio| %>
+  <tr id ="mayus" class="<%= cycle('odd','pair') %>">
+    <td><%=h dominio.idioma.nombre %></td>
+    <td><%=h dominio.lee %></td>
+    <td><%=h dominio.escribe %></td>
+    <td><%=h dominio.habla %></td>
+    <td><%=h dominio.traduce %></td>
+    <td><%= link_to 'Ver', docente_dominio_path(@docente, dominio) %></td>
+    <td><%= link_to 'Editar', edit_docente_dominio_path(@docente, dominio) %></td>
+    <td><%= link_to 'Destruir', docente_dominio_path(@docente, dominio), :confirm => 'Esta Seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= link_to 'Nuevo dominio', new_docente_dominio_path %>
+      <%= link_to 'Atras', docentes_path %>
+    </td>
+  </tr>
+</table>

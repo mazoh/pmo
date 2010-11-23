@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  depositario: MyString
+  titulo_invencion: MyString
+  tipo_patente: MyString
+  pais_id: 1
+  num_registro: MyString
+  ano: 2010-11-16
+  docente_id: 1
+
+two:
+  depositario: MyString
+  titulo_invencion: MyString
+  tipo_patente: MyString
+  pais_id: 1
+  num_registro: MyString
+  ano: 2010-11-16
+  docente_id: 1

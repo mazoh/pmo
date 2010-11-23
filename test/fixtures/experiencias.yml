@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  docencia: MyString
+  institucion_empresa: MyString
+  area: MyString
+  periodo: MyString
+  ano: 2010-11-16
+  resultados: MyString
+  docente_id: 1
+
+two:
+  docencia: MyString
+  institucion_empresa: MyString
+  area: MyString
+  periodo: MyString
+  ano: 2010-11-16
+  resultados: MyString
+  docente_id: 1

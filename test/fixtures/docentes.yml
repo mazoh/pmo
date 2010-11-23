@@ -1,0 +1,57 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fecha_diligencia: 2010-11-16
+  nombres: MyString
+  apellidos: MyString
+  genero: false
+  fecha_nacimiento: 2010-11-16
+  nacionalidad_id: 1
+  tipo_documento: MyString
+  num_documento: MyString
+  email: MyString
+  telefono_fijo: 1
+  fax: 1
+  telefono_movil: MyString
+  area_id: 1
+  cargo_id: 1
+  antiguedad: MyString
+  dedicacion: MyString
+  nombre_entidad: MyString
+  tipo_vinculacion: MyString
+  hoja_registrada: false
+  requiere_apoyo: false
+  adscrito_grupo: false
+  nombre_grupo: MyString
+  adscrito_comunidad: false
+  nombre_comunidad: MyString
+  sitio: false
+  nombre_sitio: MyString
+
+two:
+  fecha_diligencia: 2010-11-16
+  nombres: MyString
+  apellidos: MyString
+  genero: false
+  fecha_nacimiento: 2010-11-16
+  nacionalidad_id: 1
+  tipo_documento: MyString
+  num_documento: MyString
+  email: MyString
+  telefono_fijo: 1
+  fax: 1
+  telefono_movil: MyString
+  area_id: 1
+  cargo_id: 1
+  antiguedad: MyString
+  dedicacion: MyString
+  nombre_entidad: MyString
+  tipo_vinculacion: MyString
+  hoja_registrada: false
+  requiere_apoyo: false
+  adscrito_grupo: false
+  nombre_grupo: MyString
+  adscrito_comunidad: false
+  nombre_comunidad: MyString
+  sitio: false
+  nombre_sitio: MyString

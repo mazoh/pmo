@@ -1,0 +1,15 @@
+<h1>Editar invento</h1>
+
+<% form_for([@docente, @prototipo]) do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= f.submit 'Actualizar' %> <% end %> |
+      <%= link_to 'Ver', docente_prototipo_path(@prototipo) %> |
+      <%= link_to 'Atras', docente_prototipos_path(@docente) %>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tipo_estudio: MyString
+  titulo_id: 1
+  area_conocimiento: MyString
+  universidad_id: 1
+  ciudad_id: 1
+  estado: MyString
+  docente_id: 1
+
+two:
+  tipo_estudio: MyString
+  titulo_id: 1
+  area_conocimiento: MyString
+  universidad_id: 1
+  ciudad_id: 1
+  estado: MyString
+  docente_id: 1

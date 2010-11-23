@@ -1,0 +1,39 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fecha_inicio: 2010-11-16
+  fecha_fin: 2010-11-16
+  nivel: MyString
+  etapa: MyString
+  tipo_doc: MyString
+  num_doc: MyString
+  nombre: MyString
+  apellido_uno: MyString
+  apellido_dos: MyString
+  genero: false
+  email: MyString
+  telefono: MyString
+  celular: MyString
+  estado: MyString
+  especial_id: 1
+  tipo_respuesta: MyString
+  ficha: 1
+
+two:
+  fecha_inicio: 2010-11-16
+  fecha_fin: 2010-11-16
+  nivel: MyString
+  etapa: MyString
+  tipo_doc: MyString
+  num_doc: MyString
+  nombre: MyString
+  apellido_uno: MyString
+  apellido_dos: MyString
+  genero: false
+  email: MyString
+  telefono: MyString
+  celular: MyString
+  estado: MyString
+  especial_id: 1
+  tipo_respuesta: MyString
+  ficha: 1

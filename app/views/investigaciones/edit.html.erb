@@ -1,0 +1,15 @@
+<h1>Editar investigacion</h1>
+
+<% form_for([@docente, @investigacion]) do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= f.submit 'Actualizar' %> <% end %> |
+      <%= link_to 'Ver', docente_investigacion_path(@investigacion) %> |
+      <%= link_to 'Atras', docente_investigaciones_path(@docente) %>
+    </td>
+  </tr>
+</table>

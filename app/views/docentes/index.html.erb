@@ -1,0 +1,65 @@
+<table style=" width: 900px">
+  <tr>
+    <td><h1 >Lista de instructores</h1></td>
+    <td style="width:230px ; text-align: right ">
+     <% form_tag docentes_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Buscar", :name => nil, :title => "Buscar instructor por numero de identificacion" %>
+     <% end %>
+    </td>
+  </tr>
+</table>
+
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+
+<table id="tab">
+  <tr><!--
+    <th id="titul">Foto</th>-->
+    <th id="titul">Nombres</th>
+    <th id="titul">Apellidos</th><!--
+    <th id="titulos">Tipo documento</th>
+    <th id="titulos">Num documento</th>-->
+    <th id="titul" colspan="9">Opciones</th>
+  </tr>
+  <tr id="vac"></tr>
+<% @docentes.each do |docente| %>
+  <tr id ="mayus" class="<%= cycle('odd','pair') %>"><!--
+    <td><#%= image_tag docente.foto.url(:small), :size => "32x32" %></td>-->
+    <td><%=h docente.nombres %></td>
+    <td><%=h docente.apellidos %></td><!--
+    <td><#%=h docente.tipo_documento %></td>
+    <td><#%=h docente.num_documento %></td>-->
+
+    <td><%= link_to 'Ver', docente %></td>
+    <td><%= link_to 'Editar', edit_docente_path(docente) %></td>
+    <td><%= link_to 'Formaciones', docente_formaciones_path(docente) %></td>
+    <td><%= link_to 'Experiencias', docente_experiencias_path(docente) %></td>
+    <td><%= link_to 'Publicaciones', docente_publicaciones_path(docente) %></td>
+    <td><%= link_to 'Lenguajes', docente_dominios_path(docente) %></td>
+    <td><%= link_to 'Inventos', docente_prototipos_path(docente) %></td>
+    <td><%= link_to 'Investigaciones', docente_investigaciones_path(docente) %></td>
+    <td><%= link_to 'P.Participar', docente_lineas_path(docente) %></td>
+    <td><%= link_to 'Destruir', docente, :confirm => 'Esta Seguro?', :method => :delete %></td></tr>
+<% end %>
+</table>
+</div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= link_to 'Nuevo instructor', new_docente_path %>
+      <%= link_to 'Atras', uno_inicios_path %>
+    </td>
+  </tr>
+</table>

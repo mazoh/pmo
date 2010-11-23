@@ -1,0 +1,58 @@
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Datos </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Tema:</td>
+          <td><%=h @investigacion.tema %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Tipo formacion:</td>
+          <td><%=h @investigacion.tipo_formacion %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Universidad:</td>
+          <td><%=h @investigacion.universidad_id %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Ciudad:</td>
+          <td><%=h @investigacion.ciudad_id %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Ano:</td>
+          <td><%=h @investigacion.ano %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Desearia participar:</td>
+          <td><%=h @investigacion.desearia_participar %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Sugerencias:</td>
+          <td><%=h @investigacion.sugerencias %></td>
+        </tr>
+      </table>
+    </div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table id="tabls2">
+  <tr>
+    <td>
+      <%= link_to 'Editar', edit_docente_investigacion_path(@docente,@investigacion) %> |
+      <%= link_to 'Atras', docente_investigaciones_path %>
+    </td>
+  </tr>
+</table>

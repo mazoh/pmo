@@ -1,0 +1,62 @@
+<table style=" width: 900px; ">
+  <tr>
+    <td style="width: 380px "><h1>Experiencias laborales de:</h1></td>
+    <td style="text-align:center; "><h2><%= @docente.nombres %></h2></td>
+    <td colspan="2" style="width:230px ; text-align: right ; padding-bottom: 15px; padding-top: 15px">
+     <% form_tag docente_experiencias_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Buscar", :name => nil %>
+     <% end %>
+    </td>
+  </tr>
+</table>
+
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+
+<table id="tab">
+  <tr>
+    <th id="titul">Docencia</th>
+    <th id="titul">Institucion empresa</th>
+    <th id="titul">Area</th>
+    <th id="titul">Periodo</th>
+    <th id="titul">Ano</th>
+    <th id="titul">Resultados</th>
+    <th id="titul" colspan="3">Opciones</th>
+  </tr>
+  <tr id="vac"></tr>
+
+<% @experiencias.each do |experiencia| %>
+  <tr id="mayus" class="<%= cycle('odd','pair') %>">
+    <td><%=h experiencia.docencia %></td>
+    <td><%=h experiencia.institucion_empresa %></td>
+    <td><%=h experiencia.area %></td>
+    <td><%=h experiencia.periodo %></td>
+    <td><%=h experiencia.ano %></td>
+    <td><%=h experiencia.resultados %></td>
+    <td><%= link_to 'Ver', docente_experiencia_path(@docente, experiencia) %></td>
+    <td><%= link_to 'Editar', edit_docente_experiencia_path(@docente, experiencia) %></td>
+    <td><%= link_to 'Destruir', docente_experiencia_path(@docente, experiencia), :confirm => 'Esta Seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= link_to 'Nueva experiencia laboral', new_docente_experiencia_path %>
+      <%= link_to 'Atras', docentes_path %>
+    </td>
+  </tr>
+</table>

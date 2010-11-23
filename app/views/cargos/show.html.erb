@@ -1,0 +1,30 @@
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Datos </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Nombre:</td>
+          <td><%=h @cargo.nombre %></td>
+        </tr>
+      </table>
+    </div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<table id="tabls2">
+  <tr>
+    <td>
+      <%= link_to 'Editar', edit_cargo_path(@cargo) %> |
+      <%= link_to 'Atras', cargos_path %>
+    </td>
+  </tr>
+</table>

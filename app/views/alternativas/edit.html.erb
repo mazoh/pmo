@@ -1,0 +1,15 @@
+<h1>Editar alternativa</h1>
+
+<% form_for([@practica, @alternativa]) do |f| %>
+  <%= f.error_messages %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= f.submit 'Actualizar' %><% end %> |
+      <%= link_to 'Ver', practica_alternativa_path(@alternativa) %> |
+      <%= link_to 'Atras', practica_alternativas_path(@practica) %>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,41 @@
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+      <table style="border: 1px dotted; width: 500px; margin: auto; padding: 10px; text-transform: capitalize ">
+        <tr>
+          <td style="background: #666; color:#fff; padding: 10px; font-weight: bold;" colspan="2"> Datos </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd">
+          <td id="tede1"><%= f.label :tema %></td>
+          <td><%= f.text_field :tema %></td>
+        </tr>
+        <tr class="pair">
+          <td id="tede1"><%= f.label :tipo_formacion %></td>
+          <td><%= f.text_field :tipo_formacion %></td>
+        </tr>
+        <tr class="odd">
+          <td id="tede1"><%= f.label :universidad_id %></td>
+          <td><%= f.collection_select :universidad_id, Universidad.all, :id, :nombre%></td>
+        </tr>
+        <tr class="pair">
+          <td id="tede1"><%= f.label :ciudad_id %></td>
+          <td><%= f.collection_select :ciudad_id, Ciudad.all, :id, :nombre%></td>
+        </tr>
+        <tr class="odd">
+          <td id="tede1"><%= f.label :ano %></td>
+          <td><%= f.date_select :ano, :discard_month => true, :discard_day => true, :start_year => 1960, :end_year => 2010 %></td>
+        </tr>
+      </table>
+    </div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>

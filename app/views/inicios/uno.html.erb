@@ -1,0 +1,84 @@
+<table id="uno">
+
+   <% if current_user %>
+      <% if current_user.roles_mask == 1 %>
+        <table id="inizio">
+          <br />
+          <h2 id="titul">investigacion, desarrollo e innovacion</h2>
+          <tr>
+            <td id="inizio2"><%= link_to 'Areas', areas_path %></td>
+            <td id="inizio2"><%= link_to 'Cargos', cargos_path %></td>
+            <td id="inizio2"><%= link_to 'Centros', centros_path %></td>
+            <td id="inizio2"><%= link_to 'Ciudades', ciudades_path %></td>
+            <td id="inizio2"><%= link_to 'Docentes', docentes_path %></td>
+            <td id="inizio2"><%= link_to 'P.Especiales', especiales_path %></td>
+          </tr>
+          <tr>            
+            <td id="inizio2"><%= link_to 'Idiomas', idiomas_path %></td>
+            <td id="inizio2"><%= link_to 'Nacionalidades', nacionalidades_path %></td>
+            <td id="inizio2"><%= link_to 'Paises', paises_path %></td>
+            <td id="inizio2"><%= link_to 'Programas', programas_path %></td>
+            <td id="inizio2"><%= link_to 'Titulos', titulos_path %></td>
+            <td id="inizio2"><%= link_to 'Universidades', universidades_path %></td>
+          </tr>
+          <tr>
+            <td id="inizio2"><%= link_to 'Usuarios', users_path %></td>
+          </tr>
+        </table>
+
+      <% elsif current_user.roles_mask == 2 %>
+        
+        <table id="inizio">
+          <br />
+          <h2 id="titul">investigacion, desarrollo e innovacion</h2>
+          <tr>
+            <td id="inizio1"><%= image_tag('/images/19.png', {:border=> 0 }) %><br /><a href="<%= docentes_path %>">Instructores</a></td>
+            <td id="inizio1"><%= image_tag('/images/9.png', {:border=> 0 }) %><br /><a href="<%= programas_path %>">Programas</a></td>
+            <td id="inizio1"><%= image_tag('/images/20.png', {:border=> 0 }) %><br /><a href="<%= especiales_path %>">Programas Especiales</a></td>
+            <td style="width: 200px">&nbsp;</td>
+          </tr>
+        </table>
+
+      <% elsif current_user.roles_mask == 4 %>
+
+        <table id="inizio">
+          <br />
+          <h2 id="titul">investigacion, desarrollo e innovacion</h2>
+          <tr>
+            <td id="inizio1"><%= image_tag('/images/19.png', {:border=> 0 }) %><br /><a href="<%= docentes_path %>">Instructores</a></td>
+            <td id="inizio1"><%= image_tag('/images/9.png', {:border=> 0 }) %><br /><a href="<%= programas_path %>">Programas</a></td>
+            <td id="inizio1"><%= image_tag('/images/20.png', {:border=> 0 }) %><br /><a href="<%= especiales_path %>">Programas Especiales</a></td>
+            <td style="width: 200px">&nbsp;</td>
+          </tr>
+        </table>
+
+      <% elsif current_user.roles_mask == 8 %>
+
+        <table id="inizio">
+          <br />
+          <h2 id="titul">investigacion, desarrollo e innovacion</h2>
+          <tr>
+            <td id="inizio1"><%= image_tag('/images/9.png', {:border=> 0 }) %><br /><a href="<%= programas_path %>">Programas</a></td>
+            <td id="inizio1"><%= image_tag('/images/20.png', {:border=> 0 }) %><br /><a href="<%= especiales_path %>">Programas Especiales</a></td>
+            <td style="width: 200px">&nbsp;</td>
+          </tr>
+        </table>
+
+      <% else %>
+        <table id="inizio">
+          <br />
+          <tr>
+            <td id="titul"><h2 id="titul2">Aun no tienes permiso para ver esta pagina</h2> </td>
+          </tr>
+        </table>
+      <% end %>
+   <% end %>
+  
+   <table id="chow">
+     <tr>
+       <td>
+         <%= link_to 'Atras', inicio_inicios_path %>
+       </td>
+     </tr>
+   </table>  
+</table>

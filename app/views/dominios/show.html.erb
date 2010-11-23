@@ -1,0 +1,50 @@
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Datos </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Idioma:</td>
+          <td><%=h @dominio.idioma_id %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Lee:</td>
+          <td><%=h @dominio.lee %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Escribe:</td>
+          <td><%=h @dominio.escribe %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Habla:</td>
+          <td><%=h @dominio.habla %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Traduce:</td>
+          <td><%=h @dominio.traduce %></td>
+        </tr>
+      </table>
+    </div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table id="tabls2">
+  <tr>
+    <td>
+      <%= link_to 'Editar', edit_docente_dominio_path(@docente,@dominio) %> |
+      <%= link_to 'Atras', docente_dominios_path %>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,127 @@
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+      <table style="border: 1px dotted; width: 500px; margin: auto; padding: 10px; text-transform: capitalize ">
+        <tr>
+          <td style="background: #666; color:#fff; padding: 10px; font-weight: bold;" colspan="2"> Datos Personales </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <!--<tr  class="odd" >
+          <td>Foto</td>
+          <td><#%= f.file_field :foto,{
+                         :size => 15,
+                         :maxlength => 60,
+                         :onFocus => "this.style.border='1px solid #f00'",
+                         :onBlur => "this.style.border='1px solid #bbb'" } %></td>
+        </tr>-->
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :apellido_uno %></td>
+          <td><%= f.text_field :apellido_uno %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1"><%= f.label :apellido_dos %></td>
+          <td><%= f.text_field :apellido_dos %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :nombre %></td>
+          <td><%= f.text_field :nombre %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1"><%= f.label :tipo_documento %></td>
+          <td><%= select(:aprendiz, :tipo_doc, { "Tarjeta  De Identidad" => "Tarjeta  De Identidad",
+                                      "Cedula De Ciudadania" => "Cedula De Ciudadania",
+                                      "Cedula De Extranjeria" => "Cedula De Extranjeria",
+                                      "Pasaporte" => "Pasaporte" }) %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :numero_documento %></td>
+          <td><%= f.text_field :num_doc %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1"><%= f.label :genero %></td>
+          <td>Masculino <%= f.radio_button("genero", 1) %>
+              Femenino <%= f.radio_button("genero", 0) %></td>
+        </tr>
+      </table>
+
+      <br /><br />
+
+      <table style="border: 1px dotted; width: 500px; margin: auto; padding: 10px; text-transform: capitalize ">
+        <tr>
+          <td style="background: #666; color:#fff; padding: 10px; font-weight: bold;" colspan="2"> Datos De Contacto</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :email %></td>
+          <td><%= f.text_field :email %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1"><%= f.label :telefono %></td>
+          <td><%= f.text_field :telefono %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :celular %></td>
+          <td><%= f.text_field :celular %></td>
+        </tr>
+      </table>
+
+      <br /><br />
+
+      <table style="border: 1px dotted; width: 500px; margin: auto; padding: 10px; text-transform: capitalize ">
+        <tr>
+          <td style="background: #666; color:#fff; padding: 10px; font-weight: bold;" colspan="2"> Datos Del Programa </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :fecha_inicio, "Fecha de inicio" %></td>
+          <td><%= f.date_select :fecha_inicio, :start_year => 2000,
+                                          :end_year => 2010,
+                                          :order => [:day, :month, :year],
+                                          :use_month_numbers => false,
+                                          :prompt => { :day => 'Dia', :month => 'Mes', :year => 'Año'} %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1"><%= f.label :fecha_fin, "Fecha de finalización" %></td>
+          <td><%= f.date_select :fecha_fin, :start_year => 2000,
+                                          :end_year => 2020,
+                                          :order => [:day, :month, :year],
+                                          :use_month_numbers => false,
+                                          :prompt => { :day => 'Dia', :month => 'Mes', :year => 'Año'} %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :nivel %></td>
+          <td><%= select(:aprendiz, :nivel, { "Tecnico" => "Tecnico", "Tecnologo" => "Tecnologo" }) %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1"><%= f.label :etapa %></td>
+          <td><%= select(:aprendiz, :etapa, { "Lectiva" => "Lectiva", "Practica" => "Practica" }) %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :estado %></td>
+          <td><%= select(:aprendiz, :estado, { "normal" => "normal", "certificado" => "certificado" }) %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1"><%= f.label :tipo_respuesta, "tipo de respuesta" %></td>
+          <td><%= select(:aprendiz, :tipo_respuesta, { "A" => "A", "C" => "C" }) %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :programa_especial %></td>
+          <td><%= f.collection_select :especial_id, Especial.all, :id, :nombre%></td>
+        </tr>
+      </table>
+    </div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>

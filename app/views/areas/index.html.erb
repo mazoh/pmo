@@ -1,0 +1,50 @@
+<table style=" width: 900px">
+  <tr>
+    <td><h1>Lista de areas</h1></td>
+    <td style="width:230px ; text-align: right ">
+     <% form_tag areas_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Buscar", :name => nil %>
+     <% end %>
+    </td>
+  </tr>
+</table>
+
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+
+<table id="tab">
+  <tr>
+    <th id="titul">Nombre area</th>
+    <th id="titul" colspan="4">Opciones</th>
+  </tr>
+  <tr id="vac"></tr>
+<% @areas.each do |area| %>
+  <tr id="mayus" class="<%= cycle('odd','pair') %>">
+    <td><%=h area.name %></td>
+    <td><%= link_to 'Ver', area %></td>
+    <td><%= link_to 'Editar', edit_area_path(area) %></td>
+    <td><%= link_to 'Destruir', area, :confirm => 'Esta Seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= link_to 'Nueva area', new_area_path %>
+      <%= link_to 'Atras', uno_inicios_path %>
+    </td>
+  </tr>
+</table>

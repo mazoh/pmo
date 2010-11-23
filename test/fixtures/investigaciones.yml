@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tema: MyString
+  tipo_formacion: MyString
+  universidad_id: 1
+  ciudad_id: 1
+  ano: 2010-11-16
+  desearia_participar: MyString
+  sugerencias: MyString
+  docente_id: 1
+
+two:
+  tema: MyString
+  tipo_formacion: MyString
+  universidad_id: 1
+  ciudad_id: 1
+  ano: 2010-11-16
+  desearia_participar: MyString
+  sugerencias: MyString
+  docente_id: 1

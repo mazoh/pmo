@@ -1,0 +1,74 @@
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Datos </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Fecha de diligencia:</td>
+          <td><%=h @practica.fecha_dil %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Está adscrito a un Grupo o semillero de Investigación:</td>
+          <td><%=h @practica.grupos %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Nombre del Grupo al cual está adscrito:</td>
+          <td><%=h @practica.nom_grup %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Está adscrito a alguna comunidad Académica: </td>
+          <td><%=h @practica.comunidades %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Nombre de la comunidad:</td>
+          <td><%=h @practica.nom_com %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Posee un blog o página Web:</td>
+          <td><%=h @practica.sitios %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Nombre del blog o página Web:</td>
+          <td><%=h @practica.nom_sit %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Está realizando actualmente las prácticas</td>
+          <td><%=h @practica.practicas %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Donde realiza las practicas:</td>
+          <td><%=h @practica.donde_pract %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Le gustaría participar en un Semillero de Investigación?</td>
+          <td><%=h @practica.participacion %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Area de participacion:</td>
+          <td><%=h @practica.area_part %></td>
+        </tr>
+      </table>
+    </div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table id="tabls2">
+  <tr>
+    <td>
+      <%= link_to 'Editar', edit_aprendiz_practica_path(@aprendiz,@practica) %> |
+      <%= link_to 'Atras', aprendiz_practicas_path %>
+    </td>
+  </tr>
+</table>

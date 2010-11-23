@@ -1,0 +1,77 @@
+<table style=" width: 900px; ">
+  <tr>
+    <td style="width: 350px "><h1>Lista de aprendices</h1></td>
+    <td style="text-align:center; "><h2>Ficha: &nbsp;<%= @ficha.numero %></h2></td>
+    <td colspan="2" style="width:230px ; text-align: right ; padding-bottom: 15px; padding-top: 15px">
+     <% form_tag ficha_aprendices_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Buscar", :name => nil, :title => "Buscar aprendiz por numero de identificacion" %>
+     <% end %>
+    </td>
+  </tr>
+</table>
+
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+
+<table id="tab">
+  <tr><!--
+    <th id="titul">Foto</th>
+    <th id="titul">Fecha inicio</th>
+    <th id="titul">Fecha fin</th>
+    <th id="titul">Nivel</th>
+    <th id="titul">Etapa</th>
+    <th id="titul">Ficha</th>-->
+    <th id="titul">Tipo documento</th>
+    <th id="titul">Numero documento</th>
+    <th id="titul">Nombre</th>
+    <th id="titul">Apellido uno</th>
+    <th id="titul">Apellido dos</th><!--
+    <th id="titul">Estado</th>
+    <th id="titul">Tipo respuesta</th>-->
+    <th id="titul" colspan="4">Opciones</th>
+  </tr>
+  <tr id="vac"></tr>
+<% @aprendices.each do |aprendiz| %>
+  <tr id ="mayus" class="<%= cycle('odd','pair') %>"><!--
+    <td><#%= image_tag aprendiz.foto.url(:small), :size => "32x32" %></td>
+    <td><#%=h aprendiz.fecha_inicio %></td>
+    <td><#%=h aprendiz.fecha_fin %></td>
+    <td><#%=h aprendiz.nivel %></td>
+    <td><#%=h aprendiz.etapa %></td>
+    <td><#%=h aprendiz.ficha %></td>-->
+    <td><%=h aprendiz.tipo_doc %></td>
+    <td><%=h aprendiz.num_doc %></td>
+    <td><%=h aprendiz.nombre %></td>
+    <td><%=h aprendiz.apellido_uno %></td>
+    <td><%=h aprendiz.apellido_dos %></td><!--
+    <td><#%=h aprendiz.estado %></td>
+    <td><#%=h aprendiz.tipo_respuesta %></td>-->
+
+    <td><%= link_to 'Ver', ficha_aprendiz_path(@ficha, aprendiz) %></td>
+    <td><%= link_to 'Editar', edit_ficha_aprendiz_path(@ficha, aprendiz)  %></td>
+    <td><%= link_to 'Destruir', ficha_aprendiz_path(@ficha, aprendiz), :confirm => 'Esta seguro?', :method => :delete %></td>
+    <td><%= link_to 'Practicas', aprendiz_practicas_path(aprendiz) %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= link_to 'Nuevo aprendiz', new_ficha_aprendiz_path %> |
+      <%= link_to 'Atras', programas_path %>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,57 @@
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Datos </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Login:</td>
+          <td><%=h @user.username %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Login count:</td>
+          <td><%=h @user.login_count %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Last request at:</td>
+          <td><%=h @user.last_request_at %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Last login at:</td>
+          <td><%=h @user.last_login_at %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Current login at:</td>
+          <td><%=h @user.current_login_at %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Last login ip:</td>
+          <td><%=h @user.last_login_ip %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Current login ip:</td>
+          <td><%=h @user.current_login_ip %></td>
+        </tr>
+      </table>
+    </div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table id="tabls2">
+  <tr>
+    <td>
+       <%= link_to 'Editar', edit_account_path %>
+    </td>
+  </tr>
+</table>

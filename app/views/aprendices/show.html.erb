@@ -1,0 +1,120 @@
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Datos Personales </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <!--
+         <tr>
+           <td><#%= image_tag @aprendiz.foto.url(:small), :size=>"120x120" %></td>
+         </tr>-->
+        <tr class="odd" >
+          <td id="tede1"> Apellido uno:</td>
+          <td id="tede2"><%=h @aprendiz.apellido_uno %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Apellido dos:</td>
+          <td id="tede2"> <%=h @aprendiz.apellido_dos %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"> Nombre:</td>
+          <td id="tede2"> <%=h @aprendiz.nombre %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Tipo doc:</td>
+          <td id="tede2"><%=h @aprendiz.tipo_doc %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Numero de documento:</td>
+          <td id="tede2"> <%=h @aprendiz.num_doc %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Genero:</td>
+          <td id="tede2"><%=h @aprendiz.generos %></td>
+        </tr>
+      </table>
+
+      <br /><br />
+
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Datos De Contacto</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Email:</td>
+          <td id="tede2"><%=h @aprendiz.email%></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Telefono fijo:</td>
+          <td id="tede2"><%=h @aprendiz.telefono %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Celular:</td>
+          <td id="tede2"><%=h @aprendiz.celular %></td>
+        </tr>
+      </table>
+
+      <br /><br />
+
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Datos Del Programa</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Fecha inicio:</td>
+          <td id="tede2"> <%=h @aprendiz.fecha_inicio %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Fecha fin:</td>
+          <td id="tede2"> <%=h @aprendiz.fecha_fin %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Nivel de estudio:</td>
+          <td id="tede2"><%=h @aprendiz.nivel %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Etapa actual:</td>
+          <td id="tede2"><%=h @aprendiz.etapa %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Estado:</td>
+          <td id="tede2"><%=h @aprendiz.estado %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Tipo de respuesta:</td>
+          <td id="tede2"><%=h @aprendiz.tipo_respuesta %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Programa especial:</td>
+          <td id="tede2"><%=h @aprendiz.especial.nombre %></td>
+        </tr>
+      </table>
+    </div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table id="tabls2">
+  <tr>
+    <td>
+       <%= link_to 'Editar', edit_ficha_aprendiz_path(@ficha,@aprendiz) %> |
+       <%= link_to 'Atras', ficha_aprendices_path %>
+    </td>
+  </tr>
+</table>

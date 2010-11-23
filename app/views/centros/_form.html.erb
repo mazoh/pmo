@@ -1,0 +1,25 @@
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+      <table style="border: 1px dotted; width: 500px; margin: auto; padding: 10px; text-transform: capitalize ">
+        <tr>
+          <td style="background: #666; color:#fff; padding: 10px; font-weight: bold;" colspan="2"> Datos </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :name %></td>
+          <td><%= f.text_field :name %></td>
+        </tr>
+      </table>
+    </div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>

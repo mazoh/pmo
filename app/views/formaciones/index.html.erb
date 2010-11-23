@@ -1,0 +1,62 @@
+<table style=" width: 900px; ">
+  <tr>
+    <td style="width: 380px "><h1>Formacion academica de:</h1></td>
+    <td style="text-align:center; "><h2><%= @docente.nombres %></h2></td>
+    <td colspan="2" style="width:230px ; text-align: right ; padding-bottom: 15px; padding-top: 15px">
+     <% form_tag docente_formaciones_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Buscar", :name => nil %>
+     <% end %>
+    </td>
+  </tr>
+</table>
+
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+
+<table id="tab">
+  <tr>
+    <th id="titul">Tipo estudio</th>
+    <th id="titul">Titulo</th>
+    <th id="titul">Area conocimiento</th>
+    <th id="titul">Universidad</th>
+    <th id="titul">Ciudad</th>
+    <th id="titul">Estado</th>
+    <th id="titul" colspan="3">Opciones</th>
+  </tr>
+  <tr id="vac"></tr>
+
+<% @formaciones.each do |formacion| %>
+  <tr id="mayus" class="<%= cycle('odd','pair') %>">
+    <td><%=h formacion.tipo_estudio %></td>
+    <td><%=h formacion.titulo.nombre %></td>
+    <td><%=h formacion.area_conocimiento %></td>
+    <td><%=h formacion.universidad.nombre %></td>
+    <td><%=h formacion.ciudad.nombre %></td>
+    <td><%=h formacion.estado %></td>
+    <td><%= link_to 'Ver', docente_formacion_path(@docente, formacion) %></td>
+    <td><%= link_to 'Editar', edit_docente_formacion_path(@docente, formacion) %></td>
+    <td><%= link_to 'Destruir', docente_formacion_path(@docente, formacion), :confirm => 'Esta Seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= link_to 'Nueva formacion academica', new_docente_formacion_path %> |
+      <%= link_to 'Atras', docentes_path %>
+    </td>
+  </tr>
+</table>

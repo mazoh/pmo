@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fecha_dil: 2010-11-16
+  grupo: false
+  nom_grup: MyString
+  comunidad: false
+  nom_com: MyString
+  sitio: false
+  nom_sit: MyString
+  realiza_pract: false
+  donde_pract: MyString
+  partcipar: false
+  area_part: MyString
+  aprendiz_id: 1
+
+two:
+  fecha_dil: 2010-11-16
+  grupo: false
+  nom_grup: MyString
+  comunidad: false
+  nom_com: MyString
+  sitio: false
+  nom_sit: MyString
+  realiza_pract: false
+  donde_pract: MyString
+  partcipar: false
+  area_part: MyString
+  aprendiz_id: 1

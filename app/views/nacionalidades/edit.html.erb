@@ -1,0 +1,15 @@
+<h1>Editar nacionalidad</h1>
+
+<% form_for(@nacionalidad) do |f| %>
+  <%= f.error_messages %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= f.submit 'Actualizar' %> <% end %> |
+      <%= link_to 'Ver', @nacionalidad %> |
+      <%= link_to 'Atras', nacionalidades_path %>
+    </td>
+  </tr>
+</table>

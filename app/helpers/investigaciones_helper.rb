@@ -1,0 +1,2 @@
+module InvestigacionesHelper
+end

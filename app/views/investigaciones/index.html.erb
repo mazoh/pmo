@@ -1,0 +1,64 @@
+<table style=" width: 900px; ">
+  <tr>
+    <td style="width: 380px "><h1>Investigaciones de:</h1></td>
+    <td style="text-align:center; "><h2><%= @docente.nombres %></h2></td>
+    <td colspan="2" style="width:230px ; text-align: right ; padding-bottom: 15px; padding-top: 15px">
+     <% form_tag docente_investigaciones_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Buscar", :name => nil %>
+     <% end %>
+    </td>
+  </tr>
+</table>
+
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+
+<table id="tab">
+  <tr>
+    <th id="titul">Tema</th>
+    <th id="titul">Tipo formacion</th>
+    <th id="titul">Universidad</th>
+    <th id="titul">Ciudad</th>
+    <th id="titul">Ano</th>
+    <th id="titul">Desearia participar</th>
+    <th id="titul">Sugerencias</th>
+    <th id="titul" colspan="3">Opciones</th>
+  </tr>
+  <tr id="vac"></tr>
+
+<% @investigaciones.each do |investigacion| %>
+  <tr id="mayus" class="<%= cycle('odd','pair') %>">
+    <td><%=h investigacion.tema %></td>
+    <td><%=h investigacion.tipo_formacion %></td>
+    <td><%=h investigacion.universidad_id %></td>
+    <td><%=h investigacion.ciudad_id %></td>
+    <td><%=h investigacion.ano %></td>
+    <td><%=h investigacion.desearia_participar %></td>
+    <td><%=h investigacion.sugerencias %></td>
+    <td><%= link_to 'Ver', docente_investigacion_path(@docente, investigacion) %></td>
+    <td><%= link_to 'Editar', edit_docente_investigacion_path(@docente, investigacion) %></td>
+    <td><%= link_to 'Destruir', docente_investigacion_path(@docente, investigacion), :confirm => 'Esta Seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= link_to 'Nueva investigacion', new_docente_investigacion_path %>
+      <%= link_to 'Atras', docentes_path %>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="/javascripts/script.js"></script>
+    <title>Bienvenido</title>
+    <%= stylesheet_link_tag 'application' %>    
+  </head>
+
+  <body>
+
+   <fieldset>
+
+      <div id="container">
+      <div id="user_status">
+        <% if logged_in? %>
+         <table style=" width: 900px">
+          <tr>
+            <td style="width:370px"></td>
+            <td style="text-align: center; font-size: 14px; width: 20px; background: #666; color: #fff;"> Hola!</td>
+            <td style="padding: 2px 0 2px 2px;text-align: left; font-size: 20px; text-transform: capitalize; width: 100px;background: #666; color: #fff;"> <%=h current_user.username %></td>
+            <td style="width:80px;text-align: right"><%= link_to "Cerrar Sesion", logout_path %></td>
+          </tr>
+         </table>
+        <% else %>
+         <div id="dib">
+           <%= link_to "Registrarse", signup_path %> |
+           <%= link_to "Iniciar Sesion", login_path %>
+         </div>
+        <% end %>
+
+        <%- flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <%- end -%>
+      </div>     
+
+    </div>
+      <%= yield %>
+    </fieldset>
+
+    <footer id="footer">
+       <p style="color: #999">Centro De Comercio - Oficina De Gestion De Proyectos - &copy; 2010 +0</p>
+    </footer>
+
+</body>
+</html>

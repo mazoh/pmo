@@ -1,0 +1,178 @@
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Datos Personales </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr><!--
+        <tr>
+           <td><#%= image_tag @docente.foto.url(:small) %></td>
+        </tr>-->
+        <tr class="odd" >
+          <td id="tede1">Fecha de diligencia:</td>
+          <td><%=h @docente.fecha_diligencia %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Nombres:</td>
+          <td><%=h @docente.nombres %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Apellidos:</td
+          <td><%=h @docente.apellidos %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Genero:</td>
+          <td><%=h @docente.generos %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Fecha de nacimiento:</td>
+          <td><%=h @docente.fecha_nacimiento %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Nacionalidad:</td>
+          <td><%=h @docente.nacionalidad.nombre %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Tipo de documento:</td>
+          <td><%=h @docente.tipo_documento %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Numero de documento:</td>
+          <td><%=h @docente.num_documento %></td>
+        </tr>
+      </table>
+
+      <br /><br />
+
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Datos De Contacto</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Telefono fijo:</td>
+          <td><%=h @docente.telefono_fijo %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Fax:</td>
+          <td><%=h @docente.fax %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Telefono movil:</td>
+          <td><%=h @docente.telefono_movil %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Email:</td>
+          <td><%=h @docente.email %></td>
+        </tr>
+      </table>
+
+      <br /><br />
+
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Datos Profesionales</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Centro:</td>
+          <td><%=h @docente.centro_id %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Area:</td>
+          <td><%=h @docente.area_id %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Cargo:</td>
+          <td><%=h @docente.cargo.nombre %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Antiguedad:</td>
+          <td><%=h @docente.antiguedad %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Dedicacion:</td>
+          <td><%=h @docente.dedicacion %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Nombre de entidad:</td>
+          <td><%=h @docente.nombre_entidad %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Tipo devinculacion:</td>
+          <td><%=h @docente.tipo_vinculacion %></td>
+        </tr>
+      </table>
+
+      <br /><br />
+
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Questionario</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Tiene su hoja de vida registrada en el CvLAC:</td>
+          <td><%=h @docente.hojas %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Requiere apoyo técnico para su registro:</td>
+          <td><%=h @docente.apoyos %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Está adscrito a un Grupo de Investigación:</td>
+          <td><%=h @docente.grupos %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Nombre del Grupo al cual está adscrito:</td>
+          <td><%=h @docente.nombre_grupo %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Está adscrito a alguna comunidad Académica:</td>
+          <td><%=h @docente.comunidades %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Nombre de la comunidad:</td>
+          <td><%=h @docente.nombre_comunidad %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Posee un Blog o página Web?</td>
+          <td><%=h @docente.sitios %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1">Nombre del sitio o blog:</td>
+          <td><%=h @docente.nombre_sitio %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1">Sugerencias:</td>
+          <td><%=h @docente.sugerencias %></td>
+        </tr>
+      </table>
+    </div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table id="tabls2">
+  <tr>
+    <td>
+      <%= link_to 'Editar', edit_docente_path(@docente) %> |
+      <%= link_to 'Atras', docentes_path %>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,14 @@
+<h1>Nuevo pais</h1>
+
+<% form_for(@pais) do |f| %>
+  <%= f.error_messages %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= f.submit 'Crear' %> <% end %> |
+      <%= link_to 'Atras', paises_path %>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,190 @@
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Datos Personales</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :fecha_diligencia, "Fecha de diligencia:" %></td>
+          <td> <%= f.date_select :fecha_diligencia %></td>
+        </tr><!--
+        <tr class="pair" >
+           <td>Foto</td>
+           <td id="an2"><#%= f.file_field :foto,{ :maxlength => 16,
+                       :onFocus => "this.style.border='1px solid #A89DC8'",
+                       :onBlur => "this.style.border='1px solid #bbb'" } %></td>
+        </tr>-->
+        <tr>
+          <td id="tede1"><%= f.label :nombres %></td>
+          <td><%= f.text_field :nombres %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :apellidos %></td>
+          <td><%= f.text_field :apellidos %></td></tr>
+        <tr class="pair" >
+          <td id="tede1"><%= f.label :genero %></td>
+          <td>Masculino <%= f.radio_button("genero", 1) %>
+              Femenino <%= f.radio_button("genero", 0) %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :fecha_nacimiento, "Fecha de nacimiento:"  %></td>
+          <td><%= f.date_select :fecha_nacimiento, :start_year => 1980,
+                                          :end_year => 2010,
+                                          :order => [:day, :month, :year],
+                                          :use_month_numbers => false,
+                                          :prompt => { :day => 'Dia', :month => 'Mes', :year => 'Año'} %>
+          </td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1"><%= f.label :nacionalidad_id %></td>
+          <td><%= f.collection_select :nacionalidad_id, Nacionalidad.all, :id, :nombre%></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :tipo_documento, "Tipo de documento:"  %></td>
+          <td><%= select(:docente,
+           :tipo_documento, { "Cedula De Ciudadania" => "Cedula De Ciudadania",
+                              "Cedula De Extranjeria" => "Cedula De Extranjeria",
+                              "Pasaporte" => "Pasaporte" }) %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1"><%= f.label :num_documento, "Numero de documento:"  %></td>
+          <td><%= f.text_field :num_documento %></td>
+        </tr>
+      </table>
+
+      <br /><br />
+
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Datos De Contacto</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+          <tr class="odd" >
+            <td id="tede1"><%= f.label :telefono_fijo %></td>
+            <td><%= f.text_field :telefono_fijo %></td>
+          </tr>
+          <tr class="pair" >
+            <td id="tede1"><%= f.label :fax %></td>
+            <td><%= f.text_field :fax %></td>
+          </tr>
+          <tr class="odd" >
+            <td id="tede1"><%= f.label :telefono_movil %></td>
+            <td> <%= f.text_field :telefono_movil %></td>
+          </tr>
+          <tr class="pair" >
+            <td id="tede1"><%= f.label :email %></td>
+            <td><%= f.text_field :email %></td>
+          </tr>
+      </table>
+
+      <br /><br />
+
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Datos Profesionales</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :centro_id %></td>
+          <td><%= f.collection_select :centro_id, Centro.all, :id, :name%></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1"><%= f.label :area_id %></td>
+          <td><%= f.collection_select :area_id, Area.all, :id, :name%></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :cargo_id %></td>
+          <td><%= f.collection_select :cargo_id, Cargo.all, :id, :nombre%></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1"><%= f.label :antiguedad %></td>
+          <td> <%= select(:docente,
+                :antiguedad, {"1 año" => "1 año",
+                              "2 años" => "2 años",
+                              "3 años" => "3 años",
+                              "4 años" => "4 años",
+                              "Mas de 5 años" => " Mas de 5 años"}) %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :dedicacion %></td>
+          <td><%= select(:docente, :dedicacion, {"Tiempo Completo" => "Tiempo Completo", "Medio Tiempo" => "Medio Tiempo"}) %></td>
+        </tr>
+        <tr class="pair" >
+          <td id="tede1"><%= f.label :nombre_entidad, "nombre de la entidad" %></td>
+          <td><%= f.text_field :nombre_entidad %></td>
+        </tr>
+        <tr class="odd" >
+          <td id="tede1"><%= f.label :tipo_vinculacion, "tipo de vinculación" %></td>
+          <td><%= f.text_field :tipo_vinculacion %></td>
+        </tr>
+      </table>
+
+      <br /><br />
+
+      <table id="tabls">
+        <tr>
+          <td id="ted" colspan="2"> Questionario</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+          <tr class="odd" >
+            <td id="tede1"><%= f.label :hoja_registrada,"Tiene su hoja de vida registrada en el CvLAC:" %></td>
+            <td>Si <%= f.radio_button("hoja_registrada", 1) %>
+                No <%= f.radio_button("hoja_registrada", 0) %></td>
+          </tr>
+          <tr class="pair" >
+            <td id="tede1"><%= f.label :requiere_apoyo,"Requiere apoyo técnico para su registro:" %></td>
+            <td>Si <%= f.radio_button("requiere_apoyo", 1) %>
+                No <%= f.radio_button("requiere_apoyo", 0) %> </td>
+          </tr>
+          <tr class="odd" >
+            <td id="tede1"><%= f.label :adscrito_grupo, "Está adscrito a un Grupo de Investigación:" %></td>
+            <td>Si <%= f.radio_button("adscrito_grupo", 1) %>
+                No <%= f.radio_button("adscrito_grupo", 0) %></td>
+          </tr>
+          <tr class="pair" >
+            <td id="tede1"><%= f.label :nombre_grupo,"Nombre del Grupo al cual está adscrito: " %></td>
+            <td><%= f.text_field :nombre_grupo %></td>
+          </tr>
+          <tr class="odd" >
+            <td id="tede1"><%= f.label :adscrito_comunidad, "Está adscrito a alguna comunidad Académica:" %></td>
+            <td>Si <%= f.radio_button("adscrito_comunidad", 1) %>
+                No <%= f.radio_button("adscrito_comunidad", 0) %></td>
+          </tr>
+          <tr class="pair" >
+            <td id="tede1"><%= f.label :nombre_comunidad,"Nombre de la comunidad:" %></td>
+            <td><%= f.text_field :nombre_comunidad %></td>
+          </tr>
+          <tr class="odd" >
+            <td id="tede1"><%= f.label :sitio,"Posee un Blog o página Web?" %></td>
+            <td>Si <%= f.radio_button("sitio", 1) %>
+                No <%= f.radio_button("sitio", 0) %></td>
+          </tr>
+          <tr class="pair" >
+            <td id="tede1"><%= f.label :nombre_sitio, "Nombre del sitio o blog:" %></td>
+            <td><%= f.text_field :nombre_sitio %></td>
+          </tr>
+          <tr class="odd">
+            <td id="tede1"><%= f.label :sugerencias %></td>
+            <td><%= f.text_field :sugerencias %></td>
+          </tr>
+        </table>
+    </div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>

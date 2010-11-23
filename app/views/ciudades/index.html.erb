@@ -1,0 +1,51 @@
+<table style=" width: 900px">
+  <tr>
+    <td><h1>Lista de ciudades</h1></td>
+    <td style="width:230px ; text-align: right ">
+     <% form_tag ciudades_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Buscar", :name => nil %>
+     <% end %>
+    </td>
+  </tr>
+</table>
+
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+
+<table id="tab">
+  <tr>
+    <th id="titul">Nombre</th>
+    <th id="titul" colspan="3">Opciones</th>
+  </tr>
+  <tr id="vac"></tr>
+
+<% @ciudades.each do |ciudad| %>
+  <tr id ="mayus" class="<%= cycle('odd','pair') %>">
+    <td><%=h ciudad.nombre %></td>
+    <td><%= link_to 'Ver', ciudad %></td>
+    <td><%= link_to 'Editar', edit_ciudad_path(ciudad) %></td>
+    <td><%= link_to 'Destruir', ciudad, :confirm => 'Esta Seguro?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
+
+<table style="width: 900px; margin: auto; text-align: center; padding: 20px">
+  <tr>
+    <td>
+      <%= link_to 'Nueva ciudad', new_ciudad_path %>
+      <%= link_to 'Atras', uno_inicios_path %>
+    </td>
+  </tr>
+</table>

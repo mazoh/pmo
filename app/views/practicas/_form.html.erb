@@ -1,0 +1,70 @@
+<div id="wrapper">
+  <div id="scroll">
+    <div id="scrollcontent">
+      <table style="border: 1px dotted; width: 500px; margin: auto; padding: 10px; text-transform: capitalize ">
+        <tr>
+          <td style="background: #666; color:#fff; padding: 10px; font-weight: bold;" colspan="2"> Datos </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="odd">
+          <td id="tede1"><%= f.label :fecha_dil, "Fecha de diligencia:" %></td>
+          <td><%= f.date_select :fecha_dil %></td>
+        </tr>
+        <tr class="pair">
+          <td id="tede1"><%= f.label :grupo, "Está adscrito a un Grupo o semillero de Investigación: " %></td>
+          <td>Si <%= f.radio_button("grupo", 1) %>
+              No <%= f.radio_button("grupo", 0) %></td>
+        </tr>
+        <tr class="odd">
+          <td id="tede1"><%= f.label :nom_grup, "Nombre del Grupo al cual está adscrito: "  %></td>
+          <td><%= f.text_field :nom_grup %></td>
+        </tr>
+        <tr class="pair">
+          <td id="tede1"><%= f.label :comunidad, "Está adscrito a alguna comunidad Académica: "  %></td>
+          <td>Si <%= f.radio_button("comunidad", 1) %>
+              No <%= f.radio_button("comunidad", 0) %></td>
+        </tr>
+        <tr class="odd">
+          <td id="tede1"><%= f.label :nom_com, "Nombre de la comunidad"  %></td>
+          <td><%= f.text_field :nom_com %></td>
+        </tr>
+        <tr class="pair">
+          <td id="tede1"><%= f.label :sitio, "Posee un blog o página Web"  %></td>
+          <td>Si <%= f.radio_button("sitio", 1) %>
+              No <%= f.radio_button("sitio", 0) %></td>
+        </tr>
+        <tr class="odd">
+          <td id="tede1"><%= f.label :nom_sit, "Nombre del blog o página Web"  %></td>
+          <td><%= f.text_field :nom_sit %></td>
+        </tr>
+        <tr class="pair">
+          <td id="tede1"><%= f.label :realiza_pract, "Está realizando actualmente las prácticas"  %></td>
+          <td>Si <%= f.radio_button("realiza_pract", 1) %>
+              No <%= f.radio_button("realiza_pract", 0) %></td>
+        </tr>
+        <tr class="odd">
+          <td id="tede1"><%= f.label :donde_pract, "Donde realiza las practicas"  %></td>
+          <td><%= f.text_field :donde_pract %></td>
+        </tr>
+        <tr class="pair">
+          <td id="tede1"><%= f.label :participar, "Le gustaría participar en un Semillero de Investigación?" %></td>
+          <td>Si <%= f.radio_button("participar", 1) %>
+              No <%= f.radio_button("participar", 0) %></td>
+        </tr>
+        <tr class="odd">
+          <td id="tede1"><%= f.label :area_part, "Area de participacion" %></td>
+          <td><%= f.text_field :area_part %></td>
+        </tr>
+      </table>
+    </div>
+    <div id="scrollbar">
+      <div id="scroller" class="scroller"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+TINY.scroller.init('scroll','scrollcontent','scrollbar','scroller','buttonclick');
+</script>
